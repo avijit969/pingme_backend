@@ -42,6 +42,7 @@ app.use(cookieParser())
 import userRouters from "./routes/user.routes.js"
 import chatRouters from "./routes/chat.routes.js"
 import messageRouters from "./routes/message.routes.js"
+import helthCheckRouters from "./routes/helth.routes.js"
 import { errorHandler } from "./middlewares/error.middlewares.js"
 import { initializeSocketIO } from "./socket/index.js";
 
@@ -49,6 +50,7 @@ import { initializeSocketIO } from "./socket/index.js";
 app.use("/api/v1/users", userRouters)
 app.use("/api/v1/chats", chatRouters)
 app.use("/api/v1/messages", messageRouters)
+app.use("/api/v1/health_check", helthCheckRouters)
 initializeSocketIO(io);
 
 app.use(errorHandler)
